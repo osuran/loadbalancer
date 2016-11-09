@@ -1,0 +1,122 @@
+{
+  "name": "LoadBalancerFinal",
+  "id": "/subscriptions/0c835806-3742-48ac-b09b-6dcecc01d34c/resourceGroups/LoadBalancerRG/providers/Microsoft.Network/loadBalancers/LoadBalancerFinal",
+  "etag": "W/\"2127e23a-a776-4fc9-a333-f864db31d7e6\"",
+  "type": "Microsoft.Network/loadBalancers",
+  "location": "northcentralus",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "resourceGuid": "8b1b6c38-493e-43fe-b7bf-1cdb3d133c5f",
+    "frontendIPConfigurations": [
+      {
+        "name": "LoadBalancerFrontEnd",
+        "id": "/subscriptions/0c835806-3742-48ac-b09b-6dcecc01d34c/resourceGroups/LoadBalancerRG/providers/Microsoft.Network/loadBalancers/LoadBalancerFinal/frontendIPConfigurations/LoadBalancerFrontEnd",
+        "etag": "W/\"2127e23a-a776-4fc9-a333-f864db31d7e6\"",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "privateIPAllocationMethod": "Dynamic",
+          "publicIPAddress": {
+            "id": "/subscriptions/0c835806-3742-48ac-b09b-6dcecc01d34c/resourceGroups/LoadBalancerRG/providers/Microsoft.Network/publicIPAddresses/LoadBalancerIP"
+          },
+          "loadBalancingRules": [
+            {
+              "id": "/subscriptions/0c835806-3742-48ac-b09b-6dcecc01d34c/resourceGroups/LoadBalancerRG/providers/Microsoft.Network/loadBalancers/LoadBalancerFinal/loadBalancingRules/LoadBalancerRules"
+            }
+          ],
+          "inboundNatRules": [
+            {
+              "id": "/subscriptions/0c835806-3742-48ac-b09b-6dcecc01d34c/resourceGroups/LoadBalancerRG/providers/Microsoft.Network/loadBalancers/LoadBalancerFinal/inboundNatRules/LoadBalancerInboundNATrules"
+            }
+          ]
+        }
+      }
+    ],
+    "backendAddressPools": [
+      {
+        "name": "LoadBalancerBackEnd",
+        "id": "/subscriptions/0c835806-3742-48ac-b09b-6dcecc01d34c/resourceGroups/LoadBalancerRG/providers/Microsoft.Network/loadBalancers/LoadBalancerFinal/backendAddressPools/LoadBalancerBackEnd",
+        "etag": "W/\"2127e23a-a776-4fc9-a333-f864db31d7e6\"",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "backendIPConfigurations": [
+            {
+              "id": "/subscriptions/0c835806-3742-48ac-b09b-6dcecc01d34c/resourceGroups/LoadBalancerRG/providers/Microsoft.Network/networkInterfaces/loadbalancervm495/ipConfigurations/ipconfig1"
+            },
+            {
+              "id": "/subscriptions/0c835806-3742-48ac-b09b-6dcecc01d34c/resourceGroups/LoadBalancerRG/providers/Microsoft.Network/networkInterfaces/loadbalancervm2510/ipConfigurations/ipconfig1"
+            }
+          ],
+          "loadBalancingRules": [
+            {
+              "id": "/subscriptions/0c835806-3742-48ac-b09b-6dcecc01d34c/resourceGroups/LoadBalancerRG/providers/Microsoft.Network/loadBalancers/LoadBalancerFinal/loadBalancingRules/LoadBalancerRules"
+            }
+          ]
+        }
+      }
+    ],
+    "loadBalancingRules": [
+      {
+        "name": "LoadBalancerRules",
+        "id": "/subscriptions/0c835806-3742-48ac-b09b-6dcecc01d34c/resourceGroups/LoadBalancerRG/providers/Microsoft.Network/loadBalancers/LoadBalancerFinal/loadBalancingRules/LoadBalancerRules",
+        "etag": "W/\"2127e23a-a776-4fc9-a333-f864db31d7e6\"",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "frontendIPConfiguration": {
+            "id": "/subscriptions/0c835806-3742-48ac-b09b-6dcecc01d34c/resourceGroups/LoadBalancerRG/providers/Microsoft.Network/loadBalancers/LoadBalancerFinal/frontendIPConfigurations/LoadBalancerFrontEnd"
+          },
+          "frontendPort": 80,
+          "backendPort": 80,
+          "enableFloatingIP": false,
+          "idleTimeoutInMinutes": 5,
+          "protocol": "Tcp",
+          "loadDistribution": "Default",
+          "backendAddressPool": {
+            "id": "/subscriptions/0c835806-3742-48ac-b09b-6dcecc01d34c/resourceGroups/LoadBalancerRG/providers/Microsoft.Network/loadBalancers/LoadBalancerFinal/backendAddressPools/LoadBalancerBackEnd"
+          },
+          "probe": {
+            "id": "/subscriptions/0c835806-3742-48ac-b09b-6dcecc01d34c/resourceGroups/LoadBalancerRG/providers/Microsoft.Network/loadBalancers/LoadBalancerFinal/probes/LoadBalancerProbe"
+          }
+        }
+      }
+    ],
+    "probes": [
+      {
+        "name": "LoadBalancerProbe",
+        "id": "/subscriptions/0c835806-3742-48ac-b09b-6dcecc01d34c/resourceGroups/LoadBalancerRG/providers/Microsoft.Network/loadBalancers/LoadBalancerFinal/probes/LoadBalancerProbe",
+        "etag": "W/\"2127e23a-a776-4fc9-a333-f864db31d7e6\"",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "protocol": "Tcp",
+          "port": 80,
+          "intervalInSeconds": 5,
+          "numberOfProbes": 2,
+          "loadBalancingRules": [
+            {
+              "id": "/subscriptions/0c835806-3742-48ac-b09b-6dcecc01d34c/resourceGroups/LoadBalancerRG/providers/Microsoft.Network/loadBalancers/LoadBalancerFinal/loadBalancingRules/LoadBalancerRules"
+            }
+          ]
+        }
+      }
+    ],
+    "inboundNatRules": [
+      {
+        "name": "LoadBalancerInboundNATrules",
+        "id": "/subscriptions/0c835806-3742-48ac-b09b-6dcecc01d34c/resourceGroups/LoadBalancerRG/providers/Microsoft.Network/loadBalancers/LoadBalancerFinal/inboundNatRules/LoadBalancerInboundNATrules",
+        "etag": "W/\"2127e23a-a776-4fc9-a333-f864db31d7e6\"",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "frontendIPConfiguration": {
+            "id": "/subscriptions/0c835806-3742-48ac-b09b-6dcecc01d34c/resourceGroups/LoadBalancerRG/providers/Microsoft.Network/loadBalancers/LoadBalancerFinal/frontendIPConfigurations/LoadBalancerFrontEnd"
+          },
+          "frontendPort": 443,
+          "backendPort": 443,
+          "enableFloatingIP": false,
+          "idleTimeoutInMinutes": 4,
+          "protocol": "Tcp"
+        }
+      }
+    ],
+    "outboundNatRules": [],
+    "inboundNatPools": []
+  }
+}
